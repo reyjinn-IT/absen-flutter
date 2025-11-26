@@ -110,6 +110,6 @@ class AppTheme {
         ),
         color: surfaceColor,
       ),
-    ); // ✅ TUTUP ThemeData DENGAN BENAR
-  } // ✅ TUTUP get lightTheme DENGAN BENAR
-} // ✅ TUTUP CLASS AppTheme DENGAN BENAR
+    );
+  }
+}

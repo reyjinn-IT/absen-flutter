@@ -49,15 +49,13 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
     final now = DateTime.now();
     final difference = now.difference(qrTime).inSeconds;
 
-    if (difference > 900) { // 15 minutes
+    if (difference > 900) {
       _showErrorDialog('QR Code sudah kadaluarsa');
       return;
     }
 
-    // Simulate API call for attendance
     await Future.delayed(const Duration(seconds: 1));
     
-    // Call API to submit attendance - ✅ GUNAKAN VARIABEL
     await _submitAttendance(kelasId, dosenId);
 
   } catch (e) {
@@ -72,8 +70,8 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
 Future<void> _submitAttendance(String kelasId, String dosenId) async {
   try {
     final response = await ApiService.post('mahasiswa/absen/masuk', {
-      'kelas_id': kelasId, // ✅ GUNAKAN kelasId
-      'dosen_id': dosenId, // ✅ GUNAKAN dosenId (jika diperlukan)
+      'kelas_id': kelasId,
+      'dosen_id': dosenId,
       'latitude': '-6.200000',
       'longitude': '106.816666',
     });
