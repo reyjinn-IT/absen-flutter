@@ -208,44 +208,44 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(height: 24),
 
                           // Info Text
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: AppTheme.accentColor.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.info_rounded,
-                                      color: AppTheme.accentColor,
-                                      size: 20,
-                                    ),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      'Informasi Login',
-                                      style: GoogleFonts.poppins(
-                                        color: AppTheme.accentColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'Gunakan email dan password yang telah diberikan oleh admin untuk masuk ke sistem.',
-                                  style: GoogleFonts.poppins(
-                                    color: AppTheme.textSecondary,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          // Container(
+                          //   width: double.infinity,
+                          //   padding: const EdgeInsets.all(16),
+                          //   decoration: BoxDecoration(
+                          //     color: AppTheme.accentColor.withOpacity(0.1),
+                          //     borderRadius: BorderRadius.circular(12),
+                          //   ),
+                          //   child: Column(
+                          //     crossAxisAlignment: CrossAxisAlignment.start,
+                          //     children: [
+                          //       Row(
+                          //         children: [
+                          //           Icon(
+                          //             Icons.info_rounded,
+                          //             color: AppTheme.accentColor,
+                          //             size: 20,
+                          //           ),
+                          //           const SizedBox(width: 8),
+                          //           Text(
+                          //             'Informasi Login',
+                          //             style: GoogleFonts.poppins(
+                          //               color: AppTheme.accentColor,
+                          //               fontWeight: FontWeight.w600,
+                          //             ),
+                          //           ),
+                          //         ],
+                          //       ),
+                          //       const SizedBox(height: 8),
+                          //       Text(
+                          //         'Gunakan email dan password yang telah diberikan oleh admin untuk masuk ke sistem.',
+                          //         style: GoogleFonts.poppins(
+                          //           color: AppTheme.textSecondary,
+                          //           fontSize: 12,
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

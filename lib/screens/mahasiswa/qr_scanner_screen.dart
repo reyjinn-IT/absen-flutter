@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:permission_handler/permission_handler.dart';
+// import 'package:permission_handler/permission_handler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'dart:async';
 
 import 'package:abseen_kuliah/theme/app_theme.dart';
-import 'package:abseen_kuliah/utils/permission_utils.dart';
+// import 'package:abseen_kuliah/utils/permission_utils.dart';
 import 'package:abseen_kuliah/services/api_service.dart';
 
 class QRScannerScreen extends StatefulWidget {

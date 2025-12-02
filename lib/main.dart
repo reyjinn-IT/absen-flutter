@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:convert';
-
+// import 'dart:convert'; // UNCOMMENT
+import 'package:abseen_kuliah/providers/dosen_provider.dart';
 import 'package:abseen_kuliah/providers/auth_provider.dart';
+import 'package:abseen_kuliah/providers/admin_provider.dart';
+import 'package:abseen_kuliah/providers/kelas_provider.dart';
 import 'package:abseen_kuliah/screens/auth/login_screen.dart';
 import 'package:abseen_kuliah/screens/mahasiswa/main_screen.dart';
 import 'package:abseen_kuliah/screens/mahasiswa/qr_scanner_screen.dart';
+import 'package:abseen_kuliah/screens/mahasiswa/absensi_screen.dart';
+import 'package:abseen_kuliah/screens/mahasiswa/profile_screen.dart';
 import 'package:abseen_kuliah/screens/dosen/dashboard_screen.dart';
 import 'package:abseen_kuliah/screens/dosen/qr_generator_screen.dart';
 import 'package:abseen_kuliah/screens/admin/dashboard_screen.dart';
+import 'package:abseen_kuliah/screens/admin/matakuliah_screen.dart';
+import 'package:abseen_kuliah/screens/admin/users_screen.dart';
+import 'package:abseen_kuliah/screens/admin/kelas_screen.dart';
+import 'package:abseen_kuliah/screens/admin/laporan_screen.dart';
+import 'package:abseen_kuliah/screens/dosen/kelas_screen.dart';
+import 'package:abseen_kuliah/screens/dosen/absensi_screen.dart';
+import 'package:abseen_kuliah/screens/dosen/rekap_screen.dart';
+import 'package:abseen_kuliah/screens/admin/profile_screen.dart';
 import 'package:abseen_kuliah/theme/app_theme.dart';
 
 void main() {
@@ -24,9 +36,12 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => AdminProvider()),
+        ChangeNotifierProvider(create: (_) => KelasProvider()),
+        ChangeNotifierProvider(create: (_) => DosenProvider()),
       ],
       child: MaterialApp(
-        title: 'Abseen Kuliah',
+        title: 'Absensi Kuliah',
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
@@ -36,8 +51,19 @@ class MyApp extends StatelessWidget {
           '/mahasiswa': (context) => const MahasiswaMainScreen(),
           '/dosen': (context) => const DosenDashboardScreen(),
           '/admin': (context) => const AdminDashboardScreen(),
+          '/admin/profile': (context) => const AdminProfileScreen(),
           '/mahasiswa/scan-qr': (context) => const QRScannerScreen(),
           '/dosen/generate-qr': (context) => const QRGeneratorScreen(),
+          '/mahasiswa/history': (context) => const AbsensiHistoryScreen(),
+          '/mahasiswa/profile': (context) => const ProfileScreen(),
+          '/admin/users': (context) => const UsersScreen(),
+          '/admin/kelas': (context) => const KelasScreen(),
+          '/admin/matakuliah': (context) => const MatakuliahScreen(),
+          '/admin/laporan': (context) => const LaporanScreen(),
+          // Tambah routes dosen
+          '/dosen/kelas': (context) => const DosenKelasScreen(),
+          '/dosen/absensi-kelas': (context) => const DosenAbsensiScreen(),
+          '/dosen/rekap-absensi': (context) => const DosenRekapScreen(),
         },
       ),
     );
